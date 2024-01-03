@@ -1,4 +1,14 @@
-const Comment = () => {
+import { HiOutlineHeart, HiOutlineChatBubbleOvalLeft } from "react-icons/hi2";
+
+interface CommentProps {
+  author: string;
+  avatar: string;
+  text: string;
+  level: number;
+}
+
+const Comment = ({ author, avatar, text, level }: CommentProps) => {
+  console.log(`ml-[${level * 20}px]`, "Level");
   return (
     /*
       Issue: 
@@ -10,26 +20,27 @@ const Comment = () => {
       Status:
       Fixed
     */
-    <div className="w-full flex gap-3">
+    <div className={`w-full flex gap-5 `}>
       {/* Profile Picture container */}
       <div className="flex flex-col items-center gap-2">
         <div
           className="
-          w-10
-          h-10 
+          w-8
+          h-8 
           rounded-full 
           overflow-hidden
           bg-neutral-700
           "
         >
           <img
-            src="https://i0.wp.com/wishes143.com/wp-content/uploads/2023/10/aesthetic-anime-boy-dp.jpg?fit=736%2C736&ssl=1"
-            alt="avatar"
+            src={avatar}
+            alt={author}
             className="w-full h-full object-cover"
           />
         </div>
 
-        <div className="w-[2px] rounded-full h-[calc(100%-40px)] bg-neutral-300 cursor-pointer hover:bg-neutral-400 transition"></div>
+        {/*  Line under the profile picture */}
+        <div className="w-[2px] rounded-full h-[calc(100%-40px)] bg-neutral-300 cursor-pointer hover:bg-neutral-400 transition relative"></div>
       </div>
 
       {/* Comment body */}
@@ -38,34 +49,23 @@ const Comment = () => {
         flex-1
       flex 
       flex-col 
-      gap-2
+      gap-1
       items-start
 
       "
       >
         <div className="flex items-center gap-2">
-          <h3 className="font-bold text-sm cursor-pointer">Axel Djefafla</h3>
+          <h3 className="font-semibold text-sm cursor-pointer">{author}</h3>
           <div className="w-[2px] h-[2px] rounded-full bg-neutral-500 "></div>
           <p className="text-sm text-neutral-500">less than a minute ago</p>
         </div>
-        <p className="leading-6 text-sm">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga a sed
-          dolorem illum, quam nesciunt facere eaque id velit officiis. Hic
-          ducimus nam animi eos voluptatum aliquid, explicabo voluptas
-          inventore. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Fuga a sed dolorem illum, quam nesciunt facere eaque id velit
-          officiis. Hic ducimus nam animi eos voluptatum aliquid, explicabo
-          voluptas inventore.Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Fuga a sed dolorem illum, quam nesciunt facere eaque id velit
-          officiis. Hic ducimus nam animi eos voluptatum aliquid, explicabo
-          voluptas inventore.
-        </p>
+        <p className="leading-6 text-sm">{text}</p>
         <div className="flex gap-5">
-          <button className="text-sm text-neutral-500 hover:text-gray-900 transition font-semibold">
-            Reply
+          <button className="text-sm text-neutral-500 hover:text-gray-900 transition font-medium flex items-center gap-1">
+            <HiOutlineChatBubbleOvalLeft size={18} /> Reply
           </button>
-          <button className="text-sm text-neutral-500 hover:text-gray-900 transition font-semibold">
-            Like
+          <button className="text-sm text-neutral-500 hover:text-gray-900 transition font-medium flex items-center gap-1">
+            <HiOutlineHeart size={18} /> Like
           </button>
         </div>
       </div>
