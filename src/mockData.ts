@@ -30,6 +30,25 @@ export const comments: IComment[] = [
             avatar: "https://cdn.wallpapersafari.com/49/0/2wPVNZ.jpg",
             text: "I agree, Bob. The examples really helped me understand.",
             date: "2023-01-15T12:00:00Z",
+            replies: [
+              {
+                id: 4,
+                author: "Bob",
+                avatar:
+                  "https://i0.wp.com/wishes143.com/wp-content/uploads/2023/10/smart-boy-dp.jpg?fit=564%2C564&ssl=1",
+                text: "Thanks Charlie!",
+                date: "2023-01-15T12:00:00Z",
+                replies: [
+                  {
+                    id: 4,
+                    author: "Charlie",
+                    avatar: "https://cdn.wallpapersafari.com/49/0/2wPVNZ.jpg",
+                    text: "No problem, Bob. I'm glad you enjoyed the article.",
+                    date: "2023-01-15T12:00:00Z",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },

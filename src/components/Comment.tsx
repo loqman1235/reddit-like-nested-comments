@@ -20,9 +20,9 @@ const Comment = ({ author, avatar, text, level }: CommentProps) => {
       Status:
       Fixed
     */
-    <div className={`w-full flex gap-5 `}>
+    <div className={`w-full flex gap-5 h-full`}>
       {/* Profile Picture container */}
-      <div className="flex flex-col items-center gap-2">
+      <div className="flex flex-col items-center gap-2 ">
         <div
           className="
           w-8
@@ -40,7 +40,7 @@ const Comment = ({ author, avatar, text, level }: CommentProps) => {
         </div>
 
         {/*  Line under the profile picture */}
-        <div className="w-[2px] rounded-full h-[calc(100%-40px)] bg-neutral-300 cursor-pointer hover:bg-neutral-400 transition relative"></div>
+        {/* <div className="w-[2px] rounded-full h-[calc(100%-40px)] bg-neutral-300 cursor-pointer hover:bg-neutral-400 transition relative"></div> */}
       </div>
 
       {/* Comment body */}

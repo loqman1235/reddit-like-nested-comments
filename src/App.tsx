@@ -10,11 +10,13 @@ const displayNestedReplies = (replies: IComment[], level: number = 0) => {
     return (
       <div
         key={reply.id}
+        className="relative"
         style={{
-          paddingLeft: `${level * 20}px`,
+          marginLeft: `${level * 20}px`,
           marginTop: "20px",
         }}
       >
+        <div className="absolute top-[40px] left-[calc(32px/2)] w-[2px] h-[calc(100%-40px)] bg-neutral-300 cursor-pointer hover:bg-neutral-400 transition rounded-full"></div>
         <Comment {...reply} level={level} />
         {reply.replies && displayNestedReplies(reply.replies, level + 1)}
       </div>
@@ -23,11 +25,13 @@ const displayNestedReplies = (replies: IComment[], level: number = 0) => {
 };
 
 const displayComments = (comments: IComment[]) => {
-  return comments.map((comment, index) => {
+  return comments.map((comment) => {
     return (
-      <div key={comment.id}>
+      <div key={comment.id} className="relative">
+        <div className="absolute top-[40px] left-[calc(32px/2)] w-[2px] h-[calc(100%-40px)] bg-neutral-300 cursor-pointer hover:bg-neutral-400 transition rounded-full"></div>
+
         <Comment {...comment} level={0} />
-        {comment.replies && displayNestedReplies(comment.replies, index + 1)}
+        {comment.replies && displayNestedReplies(comment.replies, 2)}
       </div>
     );
   });
