@@ -7,8 +7,7 @@ interface CommentProps {
   level: number;
 }
 
-const Comment = ({ author, avatar, text, level }: CommentProps) => {
-  console.log(`ml-[${level * 20}px]`, "Level");
+const Comment = ({ author, avatar, text }: CommentProps) => {
   return (
     /*
       Issue: 
@@ -55,17 +54,17 @@ const Comment = ({ author, avatar, text, level }: CommentProps) => {
       "
       >
         <div className="flex items-center gap-2">
-          <h3 className="font-semibold text-sm cursor-pointer">{author}</h3>
+          <h3 className="font-semibold text-[13px] cursor-pointer">{author}</h3>
           <div className="w-[2px] h-[2px] rounded-full bg-neutral-500 "></div>
-          <p className="text-sm text-neutral-500">9 hr.ago</p>
+          <p className="text-[13px] text-neutral-500">9 hr.ago</p>
         </div>
         <p className="leading-6 text-sm tracking-wide">{text}</p>
         <div className="flex gap-5">
           <button className="text-sm text-neutral-500 hover:text-white transition font-semibold flex items-center gap-1">
-            <HiOutlineChatBubbleOvalLeft size={18} /> Reply
+            <HiOutlineHeart size={18} /> Like
           </button>
           <button className="text-sm text-neutral-500 hover:text-white transition font-semibold flex items-center gap-1">
-            <HiOutlineHeart size={18} /> Like
+            <HiOutlineChatBubbleOvalLeft size={18} /> Reply
           </button>
         </div>
       </div>
