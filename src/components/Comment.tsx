@@ -20,9 +20,9 @@ const Comment = ({ author, avatar, text, level }: CommentProps) => {
       Status:
       Fixed
     */
-    <div className={`w-full flex gap-5 h-full`}>
+    <div className={`w-full flex gap-3 h-full`}>
       {/* Profile Picture container */}
-      <div className="flex flex-col items-center gap-2 ">
+      <div className="flex flex-col items-center gap-2">
         <div
           className="
           w-8
@@ -57,14 +57,14 @@ const Comment = ({ author, avatar, text, level }: CommentProps) => {
         <div className="flex items-center gap-2">
           <h3 className="font-semibold text-sm cursor-pointer">{author}</h3>
           <div className="w-[2px] h-[2px] rounded-full bg-neutral-500 "></div>
-          <p className="text-sm text-neutral-500">less than a minute ago</p>
+          <p className="text-sm text-neutral-500">9 hr.ago</p>
         </div>
-        <p className="leading-6 text-sm">{text}</p>
+        <p className="leading-6 text-sm tracking-wide">{text}</p>
         <div className="flex gap-5">
-          <button className="text-sm text-neutral-500 hover:text-gray-900 transition font-medium flex items-center gap-1">
+          <button className="text-sm text-neutral-500 hover:text-white transition font-semibold flex items-center gap-1">
             <HiOutlineChatBubbleOvalLeft size={18} /> Reply
           </button>
-          <button className="text-sm text-neutral-500 hover:text-gray-900 transition font-medium flex items-center gap-1">
+          <button className="text-sm text-neutral-500 hover:text-white transition font-semibold flex items-center gap-1">
             <HiOutlineHeart size={18} /> Like
           </button>
         </div>
